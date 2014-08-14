@@ -207,6 +207,13 @@ describe('synth module', function () {
       .expect('<h1>Welcome to Synth!</h1>');
     });
 
+    it('serves up ect', function () {
+      return request(app).get('/html/touch.html')
+      .expect(200)
+      .expect('Content-Type', 'text/html; charset=UTF-8')
+      .expect('<h1>Welcome to Synth!</h1>');
+    });
+
     it('serves up js', function () {
       return request(app).get('/js/main.js')
       .expect(200)
